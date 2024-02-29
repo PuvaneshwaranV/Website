@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="pagetop.jpg" type="icon" />
+    <title>GCET CSE</title>
+    <style>
+      #header {
+        position: absolute;
+        color: white;
+        background-color: #0c2461;
+        width: 1470px;
+      }
+      #clgname {
+        position: relative;
+        margin-left: 500px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      #clgadd {
+        position: relative;
+        margin-top: -10px;
+        margin-left: 600px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      #clgdep {
+        position: relative;
+        margin-top: -20px;
+        margin-left: 670px;
+        margin-bottom: 0px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      #clglogo {
+        position: relative;
+        margin-top: -125px;
+        margin-left: 100px;
+        margin-bottom: 0px;
+      }
+      #tamlogo {
+        position: relative;
+        margin-top: -125px;
+        margin-left: 860px;
+        border-radius: 20px;
+      }
+      .navbar {
+        overflow: hidden;
+        background-color: rgb(198, 192, 192);
+      }
+      .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 150px;
+        text-decoration: none;
+      }
+      .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Verdana, sans-serif;
+        margin: 0;
+      }
+      .mySlides {
+        display: none;
+      }
+      img {
+        vertical-align: middle;
+      }
+
+      /* Slideshow container */
+      .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        top: 300px;
+        margin: auto;
+      }
+
+      /* Next & previous buttons */
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+
+      /* Position the "next button" to the right */
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      /* On hover, add a black background color with a little bit see-through */
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      /* Caption text */
+      .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+      }
+
+      /* Number text (1/3 etc) */
+      .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+      }
+
+      /* The dots/bullets/indicators */
+      .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        margin-top: 300px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+
+      .active,
+      .dot:hover {
+        background-color: #717171;
+      }
+
+      /* Fading animation */
+      .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* On smaller screens, decrease text size */
+      @media only screen and (max-width: 300px) {
+        .prev,
+        .next,
+        .text {
+          font-size: 11px;
+        }
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      #vish {
+        margin-left: 100px;
+        color: #0c2461;
+
+        font-size: 28px;
+      }
+      #visp {
+        margin-left: 100px;
+        width: 600px;
+        text-align: justify;
+        line-height: 30px;
+      }
+      #newsh {
+        background-color: #0c2461;
+        padding: 5px;
+        margin-top: -350px;
+        margin-left: 750px;
+        width: 565px;
+        height: 70px;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 25px;
+        color: white;
+      }
+      #newshp {
+        margin: 10px;
+      }
+      #newsb {
+        margin-left: 750px;
+        margin-top: 10px;
+        height: 290px;
+        width: 800px;
+      }
+      #newsc1 {
+        background-color: #0c2461;
+        padding: 5px;
+        width: 120px;
+        border-radius: 10px;
+        margin-top: 10px;
+        padding-left: 20px;
+        color: white;
+      }
+      #newsc2 {
+        margin-left: 130px;
+        background-color: #f1f1f1;
+        width: 428px;
+        margin-top: -60px;
+        height: 60px;
+        padding: 5px;
+        text-align: center;
+        border-radius: 10px;
+      }
+      #abh {
+        text-align: center;
+        font-size: 28px;
+        color: #0c2461;
+      }
+      #abp {
+        text-align: justify;
+        line-height: 30px;
+        width: 1200px;
+        margin-left: 100px;
+      }
+      #hod1 {
+        margin-left: 100px;
+        border-radius: 10px;
+      }
+      #hod2 {
+        margin-left: 550px;
+        margin-top: -380px;
+      }
+      #hod3,
+      #hod4 {
+        font-size: 28px;
+
+        color: #0c2461;
+      }
+      #hod5 {
+        width: 750px;
+        text-align: justify;
+        line-height: 30px;
+      }
+      .f {
+        background-color: #0c2461;
+        height: 260px;
+      }
+
+      #fp1 {
+        padding-top: 30px;
+        padding-left: 50px;
+        color: white;
+      }
+      #fp2 {
+        color: white;
+        padding-left: 400px;
+        margin-top: -35px;
+      }
+      #fp3 {
+        color: white;
+        padding-left: 750px;
+        margin-top: -35px;
+      }
+      #fp4 {
+        color: white;
+        padding-left: 1100px;
+        margin-top: -35px;
+      }
+
+      #fim1 {
+        margin-left: 50px;
+      }
+      #list a {
+        color: white;
+        text-decoration: none;
+      }
+      #list {
+        color: white;
+        margin-left: 380px;
+        margin-top: -50px;
+      }
+      #list1 a {
+        color: white;
+        text-decoration: none;
+      }
+      #list1 {
+        color: white;
+        margin-left: 730px;
+        margin-top: -90px;
+      }
+      #con p {
+        font-size: 14px;
+        line-height: 0.5;
+        color: white;
+      }
+      #con {
+        margin-left: 1100px;
+        margin-top: -75px;
+      }
+      #lp {
+        font-size: 12px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1 id="clgname">Government College Of Engineering</h1>
+      <h3 id="clgadd">Thanjavur,Tamil Nadu,613402 India</h3>
+      <h4 id="clgdep">(Department of CSE)</h4>
+      <img id="clglogo" src="clglogo.png" alt="" height="130px" width="200px" />
+      <img
+        id="tamlogo"
+        src="tamlogo1.jpg"
+        alt=""
+        height="130px"
+        width="150px"
+      />
+      <div class="navbar">
+        <a href="home.html">Home</a>
+        <a href="#abh">About us</a>
+        <a href="events.html">Events</a>
+        <a href="faculties.html" class="right">Faculties</a>
+      </div>
+    </div>
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="clas.jpg" style="width: 100%" />
+        <div class="text">2021 batch</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="slideshow2.jpg" style="width: 100%" />
+        <div class="text">gcetj administrative block</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="slideshow3.jpg" style="width: 100%" />
+        <div class="text">gcetj administrative block</div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+    <br />
+
+    <div style="text-align: center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
+    <div>
+      <h3 id="vish">Vision</h3>
+      <p id="visp">
+        To be a prominent and renowned department recognized as competent
+        Engineers in a myriad of application areas with research and innovation
+        Ideas.
+      </p>
+      <h3 id="vish">Mission</h3>
+      <p id="visp">
+        To articulate the new ideas in the field of Computer Science and
+        Engineering with software and problem solving skills, leadership
+        qualities, team spirit. To impact the ethical responsibilities, helping
+        the students to contribute positively to the economic well being of our
+        nation and to tackle the complex technological challenges of the future
+        world.
+      </p>
+      <div id="new">
+        <div id="newsh">
+          <p id="newshp">News & Updates</p>
+        </div>
+        <marquee behavior="scroll" direction="up" scrolldelay="5">
+          <div id="newsb">
+            <div>
+              <div id="newsc1">
+                <p>JAN 2023</p>
+              </div>
+              <div id="newsc2"><p>IOT Workshop organized</p></div>
+            </div>
+            <div>
+              <div id="newsc1">
+                <p>FEB 2023</p>
+              </div>
+              <div id="newsc2">
+                <p>IV succesfully organized by 2021 batch</p>
+              </div>
+            </div>
+
+            <div>
+              <div id="newsc1">
+                <p>APR 2023</p>
+              </div>
+              <div id="newsc2">
+                <p>IV succesfully organized by 2019 batch</p>
+              </div>
+            </div>
+
+            <div>
+              <div id="newsc1">
+                <p>OCT 2023</p>
+              </div>
+              <div id="newsc2"><p>SIH succesfully organized</p></div>
+            </div>
+
+            <div>
+              <div id="newsc1">
+                <p>NOV 2023</p>
+              </div>
+              <div id="newsc2">
+                <p>IV succesfully organized by 2022 batch</p>
+              </div>
+            </div>
+          </div>
+        </marquee>
+      </div>
+    </div>
+    <br />
+    <div>
+      <h3 id="abh">About our Department</h3>
+      <p id="abp">
+        The department aims to go beyond the fundamentals with the view to build
+        an interest in students with quality interpersonal and professional
+        skills. The department has started the journey in 2013 and offered
+        Bachelor of Engineering (Under Graduate) in Computer Science and has a
+        vibrant student body numbering above 200 and mostly supported by
+        scholarships. The department has well qualified,experienced and
+        dedicative faculties from diverse streams and specialization Inculcating
+        job oriented Knowledge based quality education through curriculum that
+        reflects the depth of computer science. The students are provided with
+        laboratories to develop their technical and software skills and all the
+        software laboratories are internet connected to face global environment.
+        The department works with student association to develop their skills to
+        challenge their real world applications.
+      </p>
+    </div>
+    <div>
+      <img id="hod1" src="manoj.jpg" alt="" height="350px" width="380px" />
+      <div id="hod2">
+        <h3 id="hod3">OUR HOD's MESSAGE:</h3>
+        <h3 id="hod4">Mr. K.Manojkumar B.E., M.E.</h3>
+        <p id="hod5">
+          We have a team of skilled, experienced and dedicated Professors,
+          administrative and non-teaching staff who are committed to achieve
+          excellence in every activity of the institute. Overall development of
+          the individual is the goal of education and the staff of this college
+          play a great role in moulding the young minds of the students and in
+          upholding the academic traditions of this college. Quality is never an
+          accident; it is the result of strong intentions, sincere efforts,
+          intelligent decisions and skillful execution. I extend my best wishes
+          to all the students in reaching their objectives and goals that lead
+          to true success in their career path.
+        </p>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="f">
+      <div id="f1">
+        <p id="fp1">FOLLOW US ON</p>
+        <p id="fp2">OUICK LINKS</p>
+        <p id="fp3">DOWNLOADS</p>
+        <p id="fp4">CONTACT US</p>
+      </div>
+      <div clas="f2">
+        <a href="*"
+          ><img id="fim1" src="fb.png" alt="" height="30px" width="30px"
+        /></a>
+        <a href="*"
+          ><img id="fim2" src="twitter.png" alt="" height="30px" width="30px"
+        /></a>
+        <a href="*"
+          ><img id="fim3" src="insta.png" alt="" height="30px" width="30px"
+        /></a>
+      </div>
+      <div id="list">
+        <ul>
+          <li><a href="*">News & Events</a></li>
+          <li><a href="*">Admission Procedure</a></li>
+          <li><a href="*">Fee structure</a></li>
+          <li><a href="*">Circulars/Minutes</a></li>
+        </ul>
+      </div>
+      <div id="list1">
+        <ul>
+          <li><a href="*">Mandatory Disclosure</a></li>
+          <li><a href="*">Faculty/Staff forms</a></li>
+          <li><a href="*">Govt scholarship forms</a></li>
+        </ul>
+      </div>
+      <div id="con">
+        <p><b>Government College of Engineering-Thanjavur</b></p>
+        <p>Thanjavur,</p>
+        <p>Tamil Nadu - 613402</p>
+        <p><b>Phone</b> - 04362 221112, 221113</p>
+        <p><b>Fax</b> - 04362 221112</p>
+        <p><b>E-mail</b> : gcesengipatti@gmail.com</p>
+      </div>
+      <br />
+      <hr />
+      <p id="lp">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright &copy; Government College Of
+        Engineering - Thanjavur , 2024
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; Devloped & Maintained by
+        Puvi😉
+      </p>
+    </div>
+  </body>
+</html>
